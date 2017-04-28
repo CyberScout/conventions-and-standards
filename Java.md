@@ -5,6 +5,19 @@ should also be adhered to for Groovy code, insofar as Groovy is mostly a
 superset of Java. See the [Groovy](Groovy.md) document for rules and conventions
 that are specific to Groovy, or differ from Java.
 
+## Java Configuration
+
+JDK version 8.x must be used for all new development.
+
+For web applications and APIs, Spring Boot must be used. The application should
+run as a standalone JAR (embedded Tomcat or Jetty). Alternatively, it may be
+packaged as a WAR and run in a JBoss EAP application server, but only if the
+facilities of a full application server are needed.
+
+### Build
+
+Gradle must be used to build Java projects.
+
 ## Package and File Structure
 
 Source files will follow Java's requirements:

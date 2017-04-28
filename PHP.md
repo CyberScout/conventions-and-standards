@@ -12,6 +12,14 @@ PHP version 7.x must be used for all new development.
 PHP applications will be deployed under PHP-FPM, running within an Nginx
 container/proxy.
 
+----
+
+###### :warning: TODO
+
+Provide guidance on .ini settings, extensions, and security
+
+----
+
 ## Coding Standard
 
 Follow [PSR-1](http://www.php-fig.org/psr/psr-1/)
