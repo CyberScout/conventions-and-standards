@@ -14,7 +14,8 @@ these standards. They will also be enforced, possibly even with tooling
 
 ### Coding Conventions
 
-* [All](All.md)
+* [All](All.md) &mdash; *Read this first. All language-specific documents build
+  on this one.*
 * [Java](Java.md)
 * [Groovy](Groovy.md)
 * [PHP](PHP.md)
