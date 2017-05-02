@@ -11,8 +11,8 @@ superseded by language-specific rules, features, or limitations.
 **Line endings:** Files will only use Unix-style line breaks (`\n`). When
 developing on a non-POSIX platform (i.e. Windows), Git's `autocrlf` setting will
 be configured to ensure that files checked into source control only contain line
-break characters. See the [Version Control](VersionControl.md) documentation for
-details.
+break characters. See the [Version Control](VersionControl.md#coreautocrlf)
+documentation for details.
 
 ## Whitespace, Line Breaks, and Empty Lines
 

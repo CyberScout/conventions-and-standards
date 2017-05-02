@@ -36,7 +36,7 @@ broken.
 
 :warning: _Use this feature with care._ Commit history cannot be changed once it
 has been published (e.g. pushed to the central repository). However, if used
-properly, it can result in a cleaner commit history. For details, see the [git
+properly, it can result in a cleaner commit history. For details, see the [Git
 documentation](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History#_squashing).
 Make sure to create a new commit message that fully and accurately captures the
 nature of the change.
@@ -78,12 +78,65 @@ repository.
 
 ### GitHub
 
+GitHub hosts CyberScout's central repositories. The code hosted there is
+considered the _canonical_ repository.
+
+Any developer or other person that will be working with CyberScout's code must
+have a GitHub account. The CyberScout GitHub administrator(s) will assign the
+person to a team or add them as a collaborator. The administrator will need the
+GitHub username or email address of the new team member or collaborator.
+
 ### Global Config
+
+Each developer needs to have the following global configuration for their Git
+installation. Each of the items below can be configured with the follwing
+command line template:
+
+```bash
+$ git config --global [option name] [value]
+```
+
+###### `user.name`
+
+Set this option to your real first and last name.
+
+`$ git config --global user.name 'Tasmanian Devil'`
+
+
+###### `user.email`
+
+Set this option to the email address that is associated with your GitHub
+account. CyberScout employees and contractors should use their '@cyberscout.com'
+address.
+
+`$ git config --global user.email taz.devil@helpfulconsultants.com`
+
+###### `core.autocrlf`
+
+This option controls how line endings are interpreted and saved in the code
+base. Since CyberScout uses a mix of platforms for development, it is important
+that this option is configured correctly. See the
+[Git documentation](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#__code_core_autocrlf_code)
+for details.
+
+**Windows** users must set this option to `true`:
+
+`$ git config --global core.autocrlf true`
+
+**macOS or Linux** users must set this option to `input`:
+
+`$ git config --global core.autocrlf input`
 
 ## Ignore Configuration Files
 
 ### No Passwords
 
-## Line endings
+## Lines of Development
 
-## Branches, Tags, and Releases
+### Forks
+
+### Branches
+
+### Tags
+
+### Releases
