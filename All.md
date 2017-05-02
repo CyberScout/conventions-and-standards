@@ -15,3 +15,4 @@ break characters. See the [Version Control](VersionControl.md) documentation for
 details.
 
 ## Whitespace, Line Breaks, and Empty Lines
+
