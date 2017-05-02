@@ -7,8 +7,8 @@ whenever possible. Any deviance should be justified and documented.
 Code tells a story, and the story is easier to understand when the readers can
 expend their effort on following the narrative, rather than wading through the
 "noise" of the syntax. For this reason, every effort should be made to adhere to
-these standards. They will also be enforced, possibly even with tooling
-(formatters, linters, etc.).
+these standards. They will also be enforced through code reviews, and possibly
+even with tooling (formatters, linters, etc.).
 
 ## Table of Contents
 
