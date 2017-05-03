@@ -89,19 +89,15 @@ GitHub username or email address of the new team member or collaborator.
 ### Global Config
 
 Each developer needs to have the following global configuration for their Git
-installation. Each of the items below can be configured with the follwing
-command line template:
-
-```bash
-$ git config --global [option name] [value]
-```
+installation.
 
 ###### `user.name`
 
 Set this option to your real first and last name.
 
-`$ git config --global user.name 'Tasmanian Devil'`
-
+```bash
+$ git config --global user.name 'Tasmanian Devil'
+```
 
 ###### `user.email`
 
@@ -109,7 +105,9 @@ Set this option to the email address that is associated with your GitHub
 account. CyberScout employees and contractors should use their '@cyberscout.com'
 address.
 
-`$ git config --global user.email taz.devil@helpfulconsultants.com`
+```bash
+$ git config --global user.email taz.devil@helpfulconsultants.com
+```
 
 ###### `core.autocrlf`
 
@@ -121,13 +119,34 @@ for details.
 
 **Windows** users must set this option to `true`:
 
-`$ git config --global core.autocrlf true`
+```windows
+C:\> git config --global core.autocrlf true
+```
 
 **macOS or Linux** users must set this option to `input`:
 
-`$ git config --global core.autocrlf input`
+```bash
+$ git config --global core.autocrlf input
+```
+
+###### `core.excludesfile`
+
+This option will establish a default set of patterns that git will ignore. The
+[global gitignore file](git-scm/cyberscout-global.gitignore) should be saved to
+local storage, and then configured in Git.
+
+```bash
+$ git config --global core.excludesfile '/path/to/the/cyberscout-global.gitignore'
+```
 
 ## Ignore Configuration Files
+
+The default `.gitignore` file configured above will ignore most known
+system-specific files. However, other files, like Java `.properties` files,
+might be generic or specific.
+
+Therefore, care must be taken that no system-specific files are checked into
+source control.
 
 ### No Passwords
 
@@ -140,3 +159,4 @@ for details.
 ### Tags
 
 ### Releases
+
