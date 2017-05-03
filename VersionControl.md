@@ -139,16 +139,40 @@ local storage, and then configured in Git.
 $ git config --global core.excludesfile '/path/to/the/cyberscout-global.gitignore'
 ```
 
-## Ignore Configuration Files
+## Ignore System-Specific Files
 
-The default `.gitignore` file configured above will ignore most known
-system-specific files. However, other files, like Java `.properties` files,
-might be generic or specific.
+The default `.gitignore` file configured above will ignore most system-specific
+files that we are likely to work with. However, other files, like Java
+`.properties` files, might be generic or specific.
 
 Therefore, care must be taken that no system-specific files are checked into
-source control.
+source control. Such files (or values) cause problems for other developers,
+because the code will not compile and/or run on their machine without
+modifications. Then, when they commit their code changes, the system-specific
+files also get checked in, which clutters the commit history.
 
-### No Passwords
+Most importantly, such files can represent a **security risk**, because
+sensitive information, like user names and passwords, can become visible to
+unauthorized persons.
+
+The following is a partial list of items that **_must not_** be checked into
+source control. _Ever_. Not even non-production values.
+
+1. User names
+2. Passwords
+3. API keys
+4. Private encryption keys
+5. Encryption passphrases
+6. Customer PII
+
+The following is a partial list of items that _should not_ be checked into
+source control without a very good reason. These values can cause problems for
+others that work on the code base.
+
+1. System names (simple or fully-qualified)
+2. IP addresses
+3. Absolute file system paths
+4. System-specific file system paths
 
 ## Lines of Development
 
