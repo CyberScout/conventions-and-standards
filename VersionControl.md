@@ -6,6 +6,8 @@ codebase as it is growing and evolving.
 
 ## Commits
 
+###### Commit and push frequently
+
 To ensure that work in progress is not lost, commits should be made frequently
 &mdash; several times a day &mdash; and pushed up to the central repository at
 least once a day. Commits should be made at some logical milestone, but not
@@ -45,6 +47,8 @@ nature of the change.
 
 ### Commit Messages
 
+###### Use descriptive commit messages
+
 Commit messages must be descriptive, such that a reader of the commit log can
 easily determine what logical changes are in a particular commit. Whenever
 possible, they should also link to the issue tracking or project management
@@ -59,7 +63,7 @@ The commit message must _not_ consist solely of the issue link, because a commit
 log reader can't determine what's in the commit without consulting another
 system.
 
-###### Example
+_Example:_
 
 ```
 BUG-2345: Fixed duplicate 'Create Customer' transactions
@@ -139,7 +143,9 @@ local storage, and then configured in Git.
 $ git config --global core.excludesfile '/path/to/the/cyberscout-global.gitignore'
 ```
 
-## Ignore System-Specific Files
+## Versioned Files
+
+###### Ignore system-specific files
 
 The default `.gitignore` file configured above will ignore most system-specific
 files that we are likely to work with. However, other files, like Java

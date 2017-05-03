@@ -17,3 +17,10 @@ exception:
 - Source file names must be the case-sensitive name of the file's top-level
   class, plus the `.groovy` extension.
 
+## Language Constructs
+
+### Methods
+
+###### Return Types
+
+###### Return Statements

@@ -41,4 +41,28 @@ contain inner classes).
 
 ### Empty Lines
 
+## Language Constructs
+
+### Classes
+
+### Interfaces
+
+### Enums
+
+### Annotations
+
+### Methods
+
+### Fields
+
+### Variables
+
+### Loops
+
+### Conditionals
+
+### Generics
+
+### Lambdas
+
 ## Exception Handling
