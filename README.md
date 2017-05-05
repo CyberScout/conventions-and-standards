@@ -18,6 +18,7 @@ even with tooling (formatters, linters, etc.).
 * [Version Control](VersionControl.md)
 * [Comments](Comments.md)
 * [Logging](Logging.md)
+* [Testing](Testing.md)
 
 ### Coding Conventions
 
