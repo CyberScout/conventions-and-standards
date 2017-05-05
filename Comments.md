@@ -49,18 +49,30 @@ _Example of good comments:_
 ```java
 public class Example {
     
-    private int index = 0;
-    
+    private int myField;
+    private String name;
+    private ExampleStatus status;
+
     /**
-     * Increments the index, so that the next value can be retrieved. If the
-     * index is out of range, an Exception will be thrown.
+     * Does many big business Things, depending on the factor. This method might
+     * create several new Things, resulting in a new name.
      * 
-     * @return The new index 
+     * @param factor Controls which new Things are created and added to this
+     *               Example
+     * @return The new status of this object
      */
-    public int increment() {
-        // index must be incremented before it is returned. Otherwise, we would
-        // be returning the old value to the caller.
-        return ++this.index;
+    public ExampleStatus bigBusinessMethod(int factor) {
+        
+        Collection<Thing> things = loadTheThings();
+        // Only even numbered factors are valid because of reasons
+        // See BUG-7243
+        for (int i = 0; i < factor; i += 2) {
+            Thing newThing = createANewThing(factor);
+            things.append(newThing);
+            updateStatus(newThing);
+        }
+        this.name = calculateNewName();
+        return this.status;
     }
 }
 ```
@@ -68,6 +80,14 @@ public class Example {
 While contrived, the example above shows a good use of comments. The first thing
 to point out is that only a couple of key places are commented. The comments
 that exist either provide good documentation for callers, or explain why the
-code is structured as it is.
+code is structured as it is. Also, note how using descriptive variable and
+method names, along with good object-oriented principles, turns the the code
+itself into "documentation". Thus, it minimizes the need to have comments
+explain what the code is doing and why.
 
 ###### Avoid end-of-line comments
+
+End-of-line comments **should** be avoided.
+
+_Rationale:_ Comments at the end of a line are easy to miss. They offer no
+benefit over placing the comment _before_ the line of code it applies to.

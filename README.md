@@ -12,9 +12,16 @@ even with tooling (formatters, linters, etc.).
 
 ## Table of Contents
 
+### Development Standards and Guidelines
+
+* [General](General.md)
+* [Version Control](VersionControl.md)
+* [Comments](Comments.md)
+* [Logging](Logging.md)
+
 ### Coding Conventions
 
-* [All](All.md) &mdash; *Read this first. All language-specific documents build
+* [All languages](All.md) &mdash; *Read this first. All language-specific documents build
   on this one.*
 * [Java](Java.md)
 * [Groovy](Groovy.md)
@@ -22,13 +29,6 @@ even with tooling (formatters, linters, etc.).
 * [JavaScript](JavaScript.md)
 * [HTML](HTML.md)
 * [CSS](CSS.md)
-
-### Development Standards and Guidelines
-
-* [General](General.md)
-* [Version Control](VersionControl.md)
-* [Comments](Comments.md)
-* [Logging](Logging.md)
 
 ### Checklists
 
