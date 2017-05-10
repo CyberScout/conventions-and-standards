@@ -177,8 +177,8 @@ others that work on the code base.
 
 1. System names (simple or fully-qualified)
 2. IP addresses
-3. Absolute file system paths
-4. System-specific file system paths
+3. Absolute file system paths (i.e. `C:\Windows\System32\some.dll`)
+4. System-specific file system paths (i.e. `path/to/your/working/dir`)
 
 ## Lines of Development
 

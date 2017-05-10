@@ -1,5 +1,10 @@
 # Comments
 
+Nearly all languages (certainly all the ones in use at CyberScout), allow for
+the developer to leave comments in the code. Many configuration file formats
+also allow comments. Comments are a very useful tool when used properly, but
+when used improperly they can obscure the code or even be misleading.
+
 ###### Comments must be helpful
 
 Comments **should** be used to clarify a section of code. They can explain the
@@ -91,3 +96,30 @@ End-of-line comments **should** be avoided.
 
 _Rationale:_ Comments at the end of a line are easy to miss. They offer no
 benefit over placing the comment _before_ the line of code it applies to.
+
+###### Keep comments accurate and up-to-date
+
+Because comments have no bearing on the actual program logic, it is easy for
+them to become out-of-date as the program evolves. Comments that are attached to
+a certain section of code **must** be reviewed and updated as necessary when
+making changes to that section.
+
+_Rationale:_ Comments that do not evolve with the application logic will become
+misleading to readers. They can cause confusion and can even be the source of
+bugs.
+
+###### Document configuration files
+
+Configuration files that are required for application operation **should** be
+documented with comments. The config files that are committed to the source tree
+**should** contain the necessary structure and keys, along with comments
+explaining what each value is for, whether the value is required, the default
+value, and a list/range/description of valid values.
+
+:warning: Be careful not to check [system-specific values into version
+control](VersionControl.md#ignore-system-specific-files).
+
+In many cases, it is preferable to check a "template" of the config file into
+source control, and then provide instructions or a script to create the "real"
+file. The real file **must** be excluded from source control (via an ignore file
+entry). The template should contain the necessary documentation.
