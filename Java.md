@@ -7,33 +7,114 @@ that are specific to Groovy, or differ from Java.
 
 ## Java Configuration
 
-JDK version 8.x must be used for all new development.
+###### Use JDK 8 as the basis for all Java applications
 
-For web applications and APIs, Spring Boot must be used. The application should
-run as a standalone JAR (embedded Tomcat or Jetty). Alternatively, it may be
-packaged as a WAR and run in a JBoss EAP application server, but only if the
-facilities of a full application server are needed.
+JDK version 8.x **must** be used for all new development.
+
+_Rationale:_ Java SE 8 is the current production-grade specification of the Java
+language, runtime, and development tools. Older versions should not be used for
+new projects.
+
+Java SE 9 is currently in the final stages of development. However, even after
+it is released, it will take some time before we consider it stable enough for
+production applications. Development tools also need time to catch up to the
+current spec. After Java 9 has had some time to "gel", we will begin evaluating
+it for use in our own applications.
+
+###### Use Spring Boot as the application framework for most Java applications
+
+For web applications and APIs, Spring Boot **must** be used.
+
+The application **should** run as a standalone JAR (embedded Tomcat or Jetty).
+Alternatively, it **may** be packaged as a WAR and run in a JBoss EAP
+application server, but only if the facilities of a full application server are
+truly needed.
+
+For other types of applications, such as batch processes, Spring Boot **should**
+be used.
+
+_Rationale:_ Spring Boot is an excellent foundation for building
+enterprise-grade Java applications. It greatly simplifies using Spring, Spring
+Web, Spring Security, Spring Batch, and so on.
 
 ### Build
 
-Gradle must be used to build Java projects.
+###### Use Gradle for building Java-based projects
+
+Gradle **must** be used to build Java projects. Some older projects use Maven or
+Ant, but new projects must use Gradle.
+
+_Rationale:_ Gradle is an advanced build system, that has the declarative
+convenience and dependency resolution of Maven, but also provides powerful
+scripting abilities to precisely control the build process when needed. Gradle
+build scripts are generally more concise and easier to read than their Maven or
+Ant counterparts.
 
 ## Package and File Structure
 
-Source files will follow Java's requirements:
+###### Follow Java's requirements for file naming and location
 
-- Directory structure must mirror package structure
-- Source file names must be the case-sensitive name of the file's top-level
-  class, plus the `.java` extension.
+Source files **must** follow Java's requirements and best practices:
 
-Source files must contain exactly one top-level class (the top-level class may
-contain inner classes).
+- Directory structure **must** mirror package structure
+- Source file names **must** be the case-sensitive name of the file's top-level
+  class, plus the `.java` extension
+
+_Rationale:_ Java source code will not properly compile unless these rules are
+followed.
+
+###### Use CyberScout's package naming conventions
+
+CyberScout applications must use the following package naming conventions:
+
+| Package                        | Purpose                                                                                                                                                                                               |
+|:-------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `com.notaneye`                 | Common top-level package for all CyberScout code                                                                                                                                                      |
+| `com.notaneye.services`        | Top-level package for back-end services, APIs, etc.                                                                                                                                                   |
+| `com.notaneye.apps`            | Top-level package for user-facing applications                                                                                                                                                        |
+| `com.notaneye.processes`       | Top-level package for batch processes and the like.                                                                                                                                                   |
+| `com.notaneye.[type].[name]`   | Top-level package for an individual project. `[type]` would be one of the types above. `[name]` is the simple name of the project.                                                                    |
+| `...[name].api`                | REST-ful controllers and other API-related code, like request & response DTOs.                                                                                                                        |
+| `...[name].common`             | Classes that are shared by multiple layers or verticals within the application.                                                                                                                       |
+| `...[name].config`             | Application config, including Spring config classes, property beans, etc.                                                                                                                             |
+| `...[name].controller`         | MVC controllers and other Web-related code, like request & response DTOs.                                                                                                                             |
+| `...[name].doc`                | Configuration and other code for self-documenting APIs.                                                                                                                                               |
+| `...[name].domain`             | Domain objects, typically with JPA annotations for persistence.                                                                                                                                       |
+| `...[name].exception`          | Application exceptions.                                                                                                                                                                               |
+| `...[name].repository`         | DAOs or Spring Data repositories.                                                                                                                                                                     |
+| `...[name].security`           | Security-related classes, beans, and configuration.                                                                                                                                                   |
+| `...[name].service`            | Business services. These should be the heart of the application, encapsulating business rules and orchestration.                                                                                      |
+| `...[name].validation`         | Validation classes and functions that are specific to the application's data types.                                                                                                                   |
+| `...[name].[lib or framework]` | Any code written specifically to integrate with a particular library or framework, For example, Spring `BeanPostProcessor` implementations, Hibernate `UserType` implementations, or Servlet filters. |
+
+###### Do not use the default package
+
+Classes **must not** be defined in the
+[default, or unnamed, package](http://docs.oracle.com/javase/specs/jls/se8/html/jls-7.html#jls-7.4.2).
+
+_Rationale:_
+[The default package is considered bad practice](http://stackoverflow.com/a/7849460/115541).
+First, class naming collisions are more likely, since the package name cannot be
+unique. Second, a class in the default package cannot be imported by other
+packages. Java provides the default package "principally for convenience when
+developing small or temporary applications or when just beginning development".
+
+###### One top-level class per file
+
+Source files **must** contain exactly one top-level class (the top-level class
+may contain inner classes, but no other top-level classes).
 
 ## Code Organization
+
+###### Avoid "utility" classes
 
 ## Whitespace, Line Breaks, and Empty Lines
 
 ### Indentation
+
+###### Use 4 spaces for general indentation
+
+###### Use 8 spaces for "continuation"
 
 ### Around Code Constructs
 

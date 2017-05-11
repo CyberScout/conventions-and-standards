@@ -22,8 +22,8 @@ even with tooling (formatters, linters, etc.).
 
 ### Coding Conventions
 
-* [All languages](All.md) &mdash; *Read this first. All language-specific documents build
-  on this one.*
+* [All languages](All.md) *&mdash; Read this first. All language-specific
+  documents build on this one.*
 * [Java](Java.md)
 * [Groovy](Groovy.md)
 * [PHP](PHP.md)
