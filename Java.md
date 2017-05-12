@@ -106,11 +106,25 @@ may contain inner classes, but no other top-level classes).
 
 ## Code Organization
 
+###### Organize code logically
+
+###### Keep members of the same type together
+
+###### Keep overloaded members together
+
 ###### Avoid "utility" classes
+
+### Naming
 
 ## Whitespace, Line Breaks, and Empty Lines
 
+###### Wrap and indent when chaining method calls
+
 ### Indentation
+
+###### Use CyberScout's K&R variant indentation style
+
+Elements of the 1TBS, Java, and Stroustrup styles.
 
 ###### Use 4 spaces for general indentation
 
@@ -119,6 +133,8 @@ may contain inner classes, but no other top-level classes).
 ### Around Code Constructs
 
 ### Line Length and Wrapping
+
+###### Keep lines under 120 characters
 
 ### Empty Lines
 
@@ -146,4 +162,16 @@ may contain inner classes, but no other top-level classes).
 
 ### Lambdas
 
+### Imports
+
+###### Do not wrap import statements
+
+###### Do not use wildcard imports
+
+###### Group imports together logically
+
 ## Exception Handling
+
+###### Do not swallow exceptions. Ever.
+
+Exception handlers **must not** swallow exceptions silently.
