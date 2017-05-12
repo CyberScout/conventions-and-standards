@@ -19,14 +19,17 @@ even with tooling (formatters, linters, etc.).
 * [Comments](Comments.md)
 * [Logging](Logging.md)
 * [Testing](Testing.md)
+* [Databases](Databases.md)
 
 ### Coding Conventions
 
 * [All languages](All.md) *&mdash; Read this first. All language-specific
   documents build on this one.*
 * [Java](Java.md)
+    * [Frameworks and Libraries](JavaFrameworksAndLibraries.md)
 * [Groovy](Groovy.md)
 * [PHP](PHP.md)
+    * [Frameworks and Libraries](PhpFrameworksAndLibraries.md)
 * [JavaScript](JavaScript.md)
 * [HTML](HTML.md)
 * [CSS](CSS.md)
