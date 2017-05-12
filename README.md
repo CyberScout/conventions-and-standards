@@ -29,7 +29,7 @@ even with tooling (formatters, linters, etc.).
     * [Frameworks and Libraries](JavaFrameworksAndLibraries.md)
 * [Groovy](Groovy.md)
 * [PHP](PHP.md)
-    * [Frameworks and Libraries](PhpFrameworksAndLibraries.md)
+    * [Frameworks and Libraries](PHPFrameworksAndLibraries.md)
 * [JavaScript](JavaScript.md)
 * [HTML](HTML.md)
 * [CSS](CSS.md)
