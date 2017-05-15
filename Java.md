@@ -124,15 +124,112 @@ may contain inner classes, but no other top-level classes).
 
 ###### Use CyberScout's K&R variant indentation style
 
-Elements of the 1TBS, Java, and Stroustrup styles.
+Code **must** use CyberScout's stanrdard indentation style. This style is a
+variant of the classic
+[K&R style](https://en.wikipedia.org/wiki/Indent_style#K.26R), and incorporates
+elements of the
+[1TBS](https://en.wikipedia.org/wiki/Indent_style#Variant:_1TBS_.28OTBS.29),
+[Java](https://en.wikipedia.org/wiki/Indent_style#Variant:_Java), and
+[Stroustrup](https://en.wikipedia.org/wiki/Indent_style#Variant:_Stroustrup)
+variants.
+
+The CyberScout style incorporates the following rules:
+
+- Starting brace is placed on the same line as the beginning of the block
+- Ending brace is placed on its own line after the block
+- Single line control statements must use braces
+- Keywords in multi-block statements (e.g if/else, do/while, etc.) must align
+
+_Rationale:_ Mostly a matter of taste, but consistency is important. Using
+braces in a consistent way helps them to fade into the background, reducing the
+syntactic noise. Aligning keywords like if & else helps to associate the blocks
+together for the reader.
+
+_Example:_
+
+```java
+public class Example {
+    
+    public void myMethod(int x, int y, String z) {
+        
+        if (x < 0) {
+            return;
+        }
+        else if (x == 0) {
+            beAwesome(x);
+        }
+        else {
+            doSomethingElse(x);
+        }
+
+        int i = 0;
+        do {
+            i++;
+        }
+        while (i < y);
+        
+        try {
+            grokString(z);
+        }
+        catch (NumberFormatException e) {
+            throw new IllegalArgumentException(e);
+        }
+    }
+}
+```
 
 ###### Use 4 spaces for general indentation
 
+Indenting normal code levels **must** use 4 spaces.
+
+_Rationale:_ Four spaces is a very common amount of indentation. Visually, it
+makes the level changes easy to spot.
+
+_Example: See next rule..._
+
 ###### Use 8 spaces for "continuation"
+
+Statement continuation **must** use 8 spaces. Continuation should be used for
+long lines or for method chaining (See rules below for wrapping).
+
+_Rationale:_ This is also a very common amount of indentation for statement
+continuation. The extra indentation helps to show that the code is a
+continuation of the statement above, rather than its own statement
+
+_Example:_
+
+```java
+public class Example {
+    
+    public void myMethod(int firstNumberParam, int secondNumberParam, String stringParam) {
+        
+        callThisMethodWithAReallyLongNameAndParameterList(
+                firstNumberParam,
+                secondNumberParam,
+                new AtomicInteger(),
+                stringParam,
+                "Some more information for this outrageous method");
+        
+        if (secondNumberParam == 0) {
+            for (int i = 0; i < firstNumberParam; i++) {
+                soManyGoodThings(stringParam);
+            }
+        }
+        
+        new ThingyBuilder()
+                .doohickey(secondNumberParam)
+                .whatchamacallit(stringParam)
+                .thingamajig(firstNumberParam)
+                .build();
+    }
+}
+```
 
 ### Around Code Constructs
 
 ### Line Length and Wrapping
+
+###### Wrap and continue chained method calls
 
 ###### Keep lines under 120 characters
 
