@@ -267,6 +267,10 @@ public class Example {
 
 ###### Group imports together logically
 
+## Comments
+
+### Javadoc
+
 ## Exception Handling
 
 ###### Do not swallow exceptions. Ever.
