@@ -189,8 +189,8 @@ _Example: See next rule..._
 
 ###### Use 8 spaces for "continuation"
 
-Statement continuation **must** use 8 spaces. Continuation should be used for
-long lines or for method chaining (See rules below for wrapping).
+Statement continuation **must** use 8 spaces. Continuation **must** be used for
+long lines and for method chaining (See rules below for wrapping).
 
 _Rationale:_ This is also a very common amount of indentation for statement
 continuation. The extra indentation helps to show that the code is a
@@ -225,6 +225,43 @@ public class Example {
 }
 ```
 
+###### Embrace the wrap
+
+When statements are long or complex, they **must** be wrapped to preserve
+readability. When statements need to be wrapped, then they **should** be
+aggressively wrapped.
+
+For instance, long method chains (such as might be used by the Builder pattern),
+should be wrapped so that each method call is on its own line. However,
+exceptions can be made when method calls logically belong together. For
+instance, consider this typical code for configuring Spring Security:
+
+```java
+class SecurityConfig extends WebSecurityConfigurerAdapter {
+    
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        
+        http
+                .authorizeRequests()
+                        .mvcMatchers('/secured').hasRole('USER')
+                        .mvcMatchers('/admin').hasRole('ADMIN')
+                        .anyRequest().permitAll()
+                        .and()
+                .formLogin()
+                        .loginPage('/login').permitAll();
+    }
+}
+```
+
+In the example above, each matcher that is defined also places the associated
+ruleset on the same line. This allows the reader to easily find and read each
+rule.
+
+Another occasion for aggressive wrapping is when individual method calls are too
+long for a single line. These should be wrapped such that each argument is on
+its own line.
+
 ### Around Code Constructs
 
 ### Line Length and Wrapping
@@ -233,29 +270,70 @@ public class Example {
 
 ###### Keep lines under 120 characters
 
-### Empty Lines
+### Vertical Whitespace (a.k.a. Empty Lines)
+
+###### Use empty lines to separate lexical elements and logical sections
+
+###### Use no more than 2 empty lines together
 
 ## Language Constructs
 
-### Classes
+### Types (Classes, Interfaces, Enums, Annotations)
 
-### Interfaces
+###### Name types with UpperCamelCase
 
-### Enums
+###### Use nouns or noun phrases for type names
 
-### Annotations
+###### Interfaces can be named using adjectives or adjective phrases
+
+Things like "Serializable" or "ReallyConfigurable"
+
+###### Annotation names should maximize readability in their context
+
+Name the annotation such that it makes sense when used in the target context.
+
+###### Use CONSTANT_CASE for enum values
 
 ### Methods
 
+###### Name methods with lowerCamelCase
+
+###### Use verbs or verb phrases for method names
+
+###### Avoid accessors and mutators
+
 ### Fields
 
+###### Never declare public instance fields
+
+###### Name non-constant fields with lowerCamelCase
+
+#### Constants
+
+###### Use CONSTANT_CASE for any static final field
+
+###### Do not use mutable types for constant values
+
 ### Variables
+
+In the following rules the word "variables" means any local variable or method
+parameter.
+
+###### Name local variables with lowerCamelCase
 
 ### Loops
 
 ### Conditionals
 
 ### Generics
+
+#### Using Generic Types
+
+###### No "bare" usages of generic types
+
+#### Defining Generic Types
+
+###### Use a single letter to define type variables
 
 ### Lambdas
 
